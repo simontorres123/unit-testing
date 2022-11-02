@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface IPersonService {
 
-    public List<Person> getAllPerson();
+    List<Person> getAllPerson();
 
-    public Person save(Person person);
+    Person save(Person person);
 }
