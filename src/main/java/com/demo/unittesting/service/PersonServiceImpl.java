@@ -8,18 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PersonServiceImpl implements IPersonService{
+public class PersonServiceImpl implements IPersonService {
 
-    @Autowired
-    private PersonRepository personRepository;
+  @Autowired private PersonRepository personRepository;
 
-    @Override
-    public List<Person> getAllPerson() {
-        return personRepository.findAll();
-    }
+  @Override
+  public List<Person> getAllPerson() {
+    return personRepository.findAll();
+  }
 
-    @Override
-    public Person save(Person person) {
-        return personRepository.save(person);
-    }
+  @Override
+  public Person save(Person person) {
+    return personRepository.save(person);
+  }
 }

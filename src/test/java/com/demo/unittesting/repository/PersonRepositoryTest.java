@@ -11,12 +11,11 @@ import java.util.List;
 @DataJpaTest
 public class PersonRepositoryTest {
 
-    @Autowired
-    private PersonRepository personRepository;
+  @Autowired private PersonRepository personRepository;
 
-    @Test
-    public void find_all_person_successs(){
-        List<Person> persons = personRepository.findAll();
-        Assertions.assertEquals(3,persons.size());
-    }
+  @Test
+  public void find_all_person_successs() {
+    List<Person> persons = personRepository.findAll();
+    Assertions.assertEquals(3, persons.size());
+  }
 }

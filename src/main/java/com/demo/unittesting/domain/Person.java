@@ -13,10 +13,10 @@ import java.io.Serializable;
 @Entity
 @Table(name = "PERSON")
 public class Person implements Serializable {
-    @Column(name = "name")
-    @Id
-    private String name;
-    @Column(name = "lastname")
-    private String lastName;
+  @Column(name = "name")
+  @Id
+  private String name;
 
+  @Column(name = "lastname")
+  private String lastName;
 }
