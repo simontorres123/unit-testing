@@ -9,9 +9,13 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "test" ]
+    branches:
+    - main
+    - test
   pull_request:
-    branches: [ "test" ]
+    branches:
+    - main
+    - test
 
 permissions: write-all
 
