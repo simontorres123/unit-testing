@@ -35,7 +35,6 @@ public class PersonControllerTest {
   public void whenPostPerson_thenCreatePerson() throws Exception {
     Person adan = new Person("adan", "alvarez");
     given(service.save(Mockito.any())).willReturn(adan);
-
     mvc.perform(
             post("/person").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(adan)))
         .andExpect(status().isCreated())
