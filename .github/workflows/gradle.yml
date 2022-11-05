@@ -9,12 +9,15 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+    - main
+    - test
   pull_request:
-    branches: [ "main" ]
+    branches:
+    - main
+    - test
 
-permissions:
-  contents: read
+permissions: write-all
 
 jobs:
   build:

@@ -12,17 +12,16 @@ import java.util.List;
 @RequestMapping("/person")
 public class PersonController {
 
-    @Autowired
-    private IPersonService personService;
+  @Autowired private IPersonService personService;
 
-    @GetMapping
-    public List<Person> getAllPerson(){
-        return personService.getAllPerson();
-    }
+  @GetMapping
+  public List<Person> getAllPerson() {
+    return personService.getAllPerson();
+  }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Person save(@RequestBody Person person){
-        return personService.save(person);
-    }
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  public Person save(@RequestBody Person person) {
+    return personService.save(person);
+  }
 }

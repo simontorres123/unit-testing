@@ -24,24 +24,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(value = PersonController.class)
 public class PersonControllerTest {
 
-    @Autowired
-    private MockMvc mvc;
+  @Autowired private MockMvc mvc;
 
-    @MockBean
-    private IPersonService service;
+  @MockBean private IPersonService service;
 
-    @BeforeEach
-    public void setUp() throws Exception {
-    }
+  @BeforeEach
+  public void setUp() throws Exception {}
 
-    @Test
-    public void whenPostPerson_thenCreatePerson() throws Exception {
-        Person adan = new Person("adan","alvarez");
-        given(service.save(Mockito.any())).willReturn(adan);
-
-        mvc.perform(post("/person").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(adan))).andExpect(status().isCreated()).andExpect(jsonPath("$.name", is("adan")));
-        verify(service, VerificationModeFactory.times(1)).save(Mockito.any());
-        reset(service);
-    }
-
+  @Test
+  public void whenPostPerson_thenCreatePerson() throws Exception {
+    Person adan = new Person("adan", "alvarez");
+    given(service.save(Mockito.any())).willReturn(adan);
+    mvc.perform(
+            post("/person").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(adan)))
+        .andExpect(status().isCreated())
+        .andExpect(jsonPath("$.name", is("adan")));
+    verify(service, VerificationModeFactory.times(1)).save(Mockito.any());
+    reset(service);
+  }
 }
